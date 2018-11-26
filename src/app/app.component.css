@@ -1,0 +1,18 @@
+.nueva-estacion mat-form-field {
+margin-right: 5px;
+}
+
+.estacion {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-spinner {
+  margin: 0 auto;
+}
+
+.sin-estaciones {
+  font-size: 20px;
+}

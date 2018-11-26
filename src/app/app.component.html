@@ -1,0 +1,36 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Angular: Desarrollando extensiones para Chrome
+  </h1>
+  <div *ngIf="!cargando">
+
+    <div *ngIf="resultado.length">
+      <div class="estacion" *ngFor="let estacion of resultado; let i = index">
+        <div>
+          <strong>{{estacion.address}} ({{estacion.number}})</strong>
+          <div class="info">
+            Bicicletas disponibles: {{estacion.available_bikes}}
+            <br />
+            Stands disponibles: {{estacion.available_bike_stands}}
+          </div>
+        </div>
+        <button mat-icon-button color="accent" (click)="eliminarEstacion(i)">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="sin-estaciones" *ngIf="!resultado.length">Aún no has guardado ninguna estación</div>
+
+
+    <div class="nueva-estacion">
+      <mat-form-field>
+        <input matInput placeholder="Núm. estación" #nuevaEstacion required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="annadirEstacion(nuevaEstacion.value)">Añadir estación</button>
+    </div>
+  </div>
+
+  <mat-spinner *ngIf="cargando"></mat-spinner>
+
+</div>
